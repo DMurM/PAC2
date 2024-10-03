@@ -15,3 +15,20 @@ def get_users():
     connection.close()
     return users
 
+def elim_user(name):
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    cursor.execute("DELETE FROM users WHERE name = %s", (name))
+    connection.commit()
+    connection.close()
+    return
+
+def modif_user(name, email):
+    connection = get_db_connection()
+    cursor = connection.cursor()
+    cursor.execute("UPDATE users SET email = %s WHERE name = %s", (email, name))
+    connection.commit()
+    connection.close()
+    return
+
+
