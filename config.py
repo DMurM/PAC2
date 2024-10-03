@@ -1,9 +1,8 @@
-# Config database mysql
+# Mysql config
 
-# Database
-DB_HOST = '192.168.1.41'
-DB_PORT = 3306
-DB_USER = 'root'
-DB_PASS = 'MurMatu'
-DB_NAME = 'PAC2DB'
-TABLE_NAME = 'users'
+MYSQL_CONFIG = {
+    'host': '192.168.1.41',
+    'user': 'root',
+    'password': 'MurMatu',
+    'database': 'PAC2DB'
+}

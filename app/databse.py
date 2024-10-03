@@ -1,12 +1,11 @@
 import mysql.connector
-from config import *
+from config import MYSQL_CONFIG
 
-def database_connect():
+def get_db_connection():
     connection = mysql.connector.connect(
-        host=DB_HOST,
-        port=DB_PORT,
-        user=DB_USER,
-        password=DB_PASS,
-        database=DB_NAME
+        host=MYSQL_CONFIG['host'],
+        user=MYSQL_CONFIG['user'],
+        password=MYSQL_CONFIG['password'],
+        database=MYSQL_CONFIG['database']
     )
     return connection

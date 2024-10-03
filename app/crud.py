@@ -1,14 +1,14 @@
-from app.databse import database_connect
+from app.databse import get_db_connection
 
-def create_user(name, password):
-    connection = database_connect()
+def create_user(name, email):
+    connection = get_db_connection()
     cursor = connection.cursor()
-    cursor.execute("INSERT INTO users (name, password) VALUES (%s, %s)", (name, password))
+    cursor.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (name, email))
     connection.commit()
     connection.close()
 
 def get_users():
-    connection = database_connect()
+    connection = get_db_connection()
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM users")
     users = cursor.fetchall()
