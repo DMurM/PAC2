@@ -1,8 +1,3 @@
-# Mysql config
+# Configuración de SQLite
 
-MYSQL_CONFIG = {
-    'host': '192.168.1.41',
-    'user': 'root',
-    'password': 'MurMatu',
-    'database': 'PAC2DB'
-}
+DATABASE_PATH = 'pac2db.sqlite'  # El archivo de la base de datos se llamará pac2db.sqlite
